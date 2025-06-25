@@ -52,8 +52,9 @@ V2FORSLOWINTERNET.Text = "Spawner Script"
 V2FORSLOWINTERNET.TextColor3 = Color3.fromRGB(0, 0, 0)
 V2FORSLOWINTERNET.TextSize = 20.000
 V2FORSLOWINTERNET.MouseButton1Down:connect(function()
-local Spawner = loadstring(game:HttpGet("https://codeberg.org/DarkBackup/script/raw/branch/main/loadstring"))()
-Spawner.Load() -- Loads the Default UI
+local Spawner = loadstring(game:HttpGet("https://raw.githubusercontent.com/GrowAFilippino/GrowAGarden/refs/heads/main/Spawner.lua"))()
+Spawner.Load()
+
 end)
 
 TextButton_Roundify_12px.Name = "TextButton_Roundify_12px"
