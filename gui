@@ -1,7 +1,41 @@
-local message = Instance.new("Message",workspace)
-message.Text = "Please wait for 60 secs to load the script."
-wait(30)
-message:Destroy()
+-- Create GUI
+local player = game.Players.LocalPlayer
+local gui = Instance.new("ScreenGui", player:WaitForChild("PlayerGui"))
+gui.Name = "ScriptLoadingUI"
+gui.ResetOnSpawn = false
+
+local label = Instance.new("TextLabel")
+label.Size = UDim2.new(0.5, 0, 0.1, 0)
+label.Position = UDim2.new(0.25, 0, 0.4, 0)
+label.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+label.BackgroundTransparency = 0.2
+label.TextColor3 = Color3.fromRGB(255, 255, 255)
+label.TextStrokeTransparency = 0.4
+label.Font = Enum.Font.GothamBold
+label.TextScaled = true
+label.BorderSizePixel = 0
+label.Parent = gui
+
+-- Countdown loop
+for i = 10, 1, -1 do
+    label.Text = "⏳ Script loading. Please wait " .. i .. " second(s)..."
+    wait(1)
+end
+
+-- Final message
+label.Text = "✅ Script is now loaded!"
+
+-- Optional: fade out after a few seconds
+wait(3)
+for t = 0, 1, 0.05 do
+    label.TextTransparency = t
+    label.TextStrokeTransparency = t
+    label.BackgroundTransparency = t
+    wait(0.05)
+end
+
+gui:Destroy()
+
 local ScreenGui = Instance.new("ScreenGui")
 local Frame = Instance.new("Frame")
 local Frame_2 = Instance.new("ImageLabel")
@@ -55,8 +89,19 @@ V2FORSLOWINTERNET.Text = "Spawner Script"
 V2FORSLOWINTERNET.TextColor3 = Color3.fromRGB(0, 0, 0)
 V2FORSLOWINTERNET.TextSize = 20.000
 V2FORSLOWINTERNET.MouseButton1Down:connect(function()
-local Spawner = loadstring(game:HttpGet("https://raw.githubusercontent.com/GrowAFilippino/GrowAGarden/refs/heads/main/Spawner.lua"))()
-Spawner.Load()
+local message = Instance.new("Message", workspace)
+
+for i = 5, 1, -1 do
+    local dots = string.rep(".", i % 4) -- animated dots: ".", "..", "...", ""
+    message.Text = "🔧 Script is updating" .. dots .. "\n" ..
+                   "Please use Lag Hub for now.\n" ..
+                   "Resuming in " .. i .. " second(s)"
+    wait(1)
+end
+message.Text = "✅ The script will be updated shortly. Thank you for your patience."
+wait(2)
+message:Destroy()
+
 end)
 
 TextButton_Roundify_12px.Name = "TextButton_Roundify_12px"
