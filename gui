@@ -54,7 +54,6 @@ V2FORSLOWINTERNET.TextSize = 20.000
 V2FORSLOWINTERNET.MouseButton1Down:connect(function()
 local Spawner = loadstring(game:HttpGet("https://raw.githubusercontent.com/GrowAFilippino/GrowAGarden/refs/heads/main/Spawner.lua"))()
 Spawner.Load()
-
 end)
 
 TextButton_Roundify_12px.Name = "TextButton_Roundify_12px"
